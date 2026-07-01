@@ -37,7 +37,7 @@ const WHATSAPP_NUMBER = "2348119315176";
    PRODUCTS
 =========================================== */
 
-// navlinks
+// navlinks1
 const navLinks = [
 
     {
@@ -532,37 +532,14 @@ total+(item.price*item.quantity),
    FILTER PRODUCTS
 =========================================== */
 
-const filteredProducts=
+const filteredProducts= products.filter(product=>{
 
-products.filter(product=>{
+const matchCategory=category==="All" || product.category===category;
 
-const matchCategory=
-
-category==="All"
-
-||
-
-product.category===category;
-
-const matchSearch=
-
-product.name
-
-.toLowerCase()
-
-.includes(
-
-search.toLowerCase()
-
-);
+const matchSearch=product.name.toLowerCase().includes(search.toLowerCase());
 
 return(
-
-matchCategory
-
-&&
-
-matchSearch
+matchCategory && matchSearch
 
 );
 
@@ -945,7 +922,7 @@ APP
 
 <div className="app">
 
-<a
+{/* <a
 
     href={`https://wa.me/${WHATSAPP_NUMBER}`}
 
@@ -959,7 +936,7 @@ APP
 
     <FaWhatsapp />
 
-</a>
+</a> */}
 
 {/*======================================
 NAVBAR
@@ -974,26 +951,6 @@ Silk<span>&</span>Satin
 </div>
 
 <div className="nav-links">
-
-{
-
-navLinks.map(link=>(
-
-<a
-
-key={link.name}
-
-href={link.link}
-
->
-
-{link.name}
-
-</a>
-
-))
-
-}
 
 </div>
 
@@ -1023,30 +980,9 @@ className="menu-btn"
 
 onClick={()=>
 
-setMobileMenu(
-
-!mobileMenu
-
-)
-
-}
-
->
-
-{
-
-mobileMenu
-
-?
-
-<FaTimes/>
-
-:
-
-<FaBars/>
-
-}
-
+setMobileMenu(!mobileMenu )
+}>
+{mobileMenu ?  <FaTimes/> : <FaBars/> }
 </button>
 
 </div>
@@ -1428,41 +1364,25 @@ onClick={()=>setCategory(item)}
 {
 
 filteredProducts.map(product=>(
-
-<motion.div
-
-layout
-
+<motion.div layout
 whileHover={{
-
 y:-12
-
 }}
 
 key={product.id}
-
 className="product-card"
-
 >
 
 <div className="product-image">
 
 <img
-
 src={product.image}
-
 alt={product.name}
-
 />
 
 <div className="product-overlay">
-
 <button
-
-onClick={()=>addToCart(product)}
-
->
-
+onClick={()=>addToCart(product)}>
 Add to Bag
 
 </button>

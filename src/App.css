@@ -1,28 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Poppins:wght@400;500;600&display=swap');
 
 :root{
-
---purple:#3B185F;
-
---purple2:#5B2C87;
-
---lavender:#E8DDF8;
-
---white:#ffffff;
-
---background:#F8F6FC;
-
---dark:#22152D;
-
---gold:#C8A146;
-
---shadow:0 18px 50px rgba(59,24,95,.15);
-
---radius:22px;
-
---transition:.4s ease;
-
+    --purple:#3B185F;
+    --purple2:#5B2C87;
+    --lavender:#E8DDF8;
+    --white:#ffffff;
+    --background:#F8F6FC;
+    --dark:#22152D;
+    --gold:#C8A146;
+    --shadow:0 18px 50px rgba(59,24,95,.15);
+    --radius:22px;
+    --transition:.4s ease;
 }
+
+html,body{max-width:100%;overflow-x:hidden}
+
+html{margin:0;padding:0;font-size:clamp(14px,1.2vw + 12px,18px)}
 
 *{
 
@@ -396,20 +389,15 @@ NAVBAR
 =========================================*/
 
 .navbar{
-
-position:fixed;
-
-top:20px;
-
-left:50%;
-
-transform:translateX(-50%);
-
-width:92%;
-
-max-width:1350px;
-
-padding:18px 35px;
+    width:100%;
+    position:fixed;
+    top:20px;
+    left:0;
+    right:0;
+    margin:0 auto;
+    max-width:1200px;
+    padding:18px 35px;
+    box-sizing:border-box;
 
 display:flex;
 
@@ -2034,6 +2022,7 @@ font-size:2.3rem;
 
 }
 
+
 @media(max-width:500px){
 
 section{
@@ -2046,7 +2035,7 @@ padding:80px 20px;
 
 padding:15px 20px;
 
-width:95%;
+width:100%;
 
 }
 
@@ -2095,7 +2084,7 @@ padding:25px;
 .floating-whatsapp{
 
 width:58px;
-
+position: fixed;
 height:58px;
 
 right:18px;
@@ -2267,21 +2256,6 @@ to{
 opacity:1;
 
 }
-
-}
-/* Desktop */
-.menu-btn{
-    display:none;
-}
-
-/* Mobile */
-@media (max-width:700px){
-
-    .menu-btn{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-    }
 
 }
 
